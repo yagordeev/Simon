@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<%- include('header') -%>
+		<body>
+			<div id="content">
+				<div id="startblock">
+					<!-- <% if (!gamerName) { %> <% } else { %> <div style="color:#fff; margin-bottom: 30px;line-height: 2;font-size: 12px;"><%= gamerName %>,<br/> Your best record: <%= gamerRecord %></div> <% } %> -->
+					<h1 id="game-title">Simon Game</h1>
+					<div class="newPlayer">
+						<% if (!gamerName) { %>
+							<form id="newPlayer" action="/playGame" method="post">
+								<input type="text" name="gamerName" value="" placeholder="Your name" required="required">
+							</form>
+							<button form="newPlayer" type="submit" id="play">Play</button>
+						<% } else { %>
+							<button id="play">
+								<a href="/play?name=<%= gamerName %>" id="play" onclick="">Play</a>
+							</button>
+						<% } %>
+					</div>
+					<div class="recordTitle">Gamer's Records</div>
+					<div id="recordTable">
+						<% var myCount = 0 %>
+							<% allGamers.forEach(function(gamer) { %>
+								<div id="<%= gamer._id %>" class="gamerRecord">
+									<% myCount += 1 %>
+										<span class="first center"><%= myCount %></span>
+										<span class="second left"><%= gamer.name %></span>
+										<span class="third center"><%= gamer.record %></span>
+									</div>
+									<% }) %>
+									</div>
+									<% if (gamerName) { %>
+										<a href="/">Эй, я не
+											<%= gamerName %>!</a>
+									<% } %>
+								</div>
+							</div>
+							<div id="prod">By yaGordeev</div>
+						</body>
+						<%- include('footer') -%>
+							<script>
+								$(document).ready(function () {
+									$('#<%= activeGamer %>').addClass('active');
+								});
+							</script>
+						</html>

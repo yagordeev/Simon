@@ -1,0 +1,37 @@
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<meta name="apple-mobile-web-app-capable" content="yes"/>
+		<meta name="viewport" content="initial-scale=0.8 maximum-scale=0.8 user-scalable=0"/>
+		<link rel="apple-touch-icon" sizes="180x180" href="touch-icon.png">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+		<title>Simon Game</title>
+		<link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="style.css">
+	</head>
+	<body class="">
+		<div id="menu">
+			<div id="record" style="color:#fff;">Ваш рекорд: 0</div>
+			<h1 id="game-title">Simon Game</h1>
+			<form class="" action="/newGamer" method="post">
+				<input type="text" name="gamerName" value="" placeholder="Your name">
+				<button type="submit" id="play" onclick="game()">Play</button>
+			</form>
+			<div id="prod">By yaGordeev</div>
+		</div>
+		<div id="game" class="hidden">
+			<form id="gamerRecord" action="/gamerRecord" method="post" hidden="hidden">
+				<input type="text" name="gamerRecord" value="">
+			</form>
+			<h1 id="level-title">Level 1</h1>
+			<div class="container">
+				<div type="button" id="green" class="btn green" style=""></div>
+				<div type="button" id="red" class="btn red"></div>
+				<div type="button" id="yellow" class="btn yellow" style=""></div>
+				<div type="button" id="blue" class="btn blue" style=""></div>
+			</div>
+		</div>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script type="text/javascript" src="index.js"></script>
+	</body>
+</html>

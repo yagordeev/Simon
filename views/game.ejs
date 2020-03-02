@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<%- include('header') -%>
+		<body>
+			<div id="content">
+				<div id="startblock">
+					<form id="gamerRecord" action="/gamerRecord" method="post" hidden="hidden">
+						<input type="text" id="gN" name="gamerName" value="<%= gamerName %>">
+						<input type="text" id="gR" name="gamerRecord" value="<%= gamerRecord %>">
+					</form>
+					<h1 id="level-title">Level 1</h1>
+					<div class="container">
+						<div type="button" id="green" class="btn green" style=""></div>
+						<div type="button" id="red" class="btn red"></div>
+						<div type="button" id="yellow" class="btn yellow" style=""></div>
+						<div type="button" id="blue" class="btn blue" style=""></div>
+					</div>
+				</div>
+			</div>
+		</body>
+		<%- include('footer') -%>
+		</html>

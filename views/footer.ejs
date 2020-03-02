@@ -1,0 +1,13 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="/index.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+var a=document.getElementsByTagName("a");
+	for(var i=0;i<a.length;i++) {
+		a[i].onclick=function() {
+			window.location=this.getAttribute("href");
+			return false
+		};
+	};
+});
+</script>
